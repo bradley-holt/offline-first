@@ -15,7 +15,7 @@ Promise.all([
     {_id: "2014-11-12T00:43:01.633Z", kilowatt_hours: 13},
     {_id: "2014-11-12T02:42:52.284Z", kilowatt_hours: 14},
     {_id: "2014-11-12T02:46:23.730Z", kilowatt_hours: 16}
-  ]),
+  ])
 ]).then(function() {
   db.sync(remoteDb, {
     live: false,

@@ -53,4 +53,3 @@ Promise.all([
 }).catch(function(error) {
   console.log(error);
 });
-

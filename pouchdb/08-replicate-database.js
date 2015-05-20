@@ -40,6 +40,3 @@ db.bulkDocs([
 }).catch(function(error) {
   console.log(error);
 });
-
-
-

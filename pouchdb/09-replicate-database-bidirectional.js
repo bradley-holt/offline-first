@@ -1,8 +1,10 @@
 // Bidirectionally replicate a PouchDB database
 var db = new PouchDB("smart-meter");
+console.log("Local database created");
 var remoteDb = new PouchDB(
   "https://bradley-holt.cloudant.com/smart-meter"
 );
+console.log("Remote database created");
 Promise.all([
   db.bulkDocs([
     {_id: "2014-11-12T23:27:03.794Z", kilowatt_hours: 14},
@@ -17,34 +19,48 @@ Promise.all([
     {_id: "2014-11-12T02:46:23.730Z", kilowatt_hours: 16}
   ])
 ]).then(function() {
+  console.log("Documents created");
   db.sync(remoteDb, {
     live: false,
     retry: false
   }).on("change", function(info) {
     // Replication has written a new document
+    console.log("On change");
     console.log(info);
   }).on("complete", function(info) {
     // Replication has complete or been cancelled
+    console.log("On complete");
     console.log(info);
     // Delete the local and remote databases
-    db.destroy();
-    remoteDb.destroy();
+    return Promise.all([
+      db.destroy(),
+      remoteDb.destroy()
+    ]);
   }).on("paused", function(error) {
     // Replication has paused
+    console.log("On paused");
     console.log(error);
   }).on("active", function() {
     // Replication has started actively processing changes
+    console.log("On active");
     console.log("active");
   }).on("denied", function(error) {
     // Document failed to replicate
+    console.log("On denied");
     console.log(error);
   }).on("error", function(error) {
     // Replication has stopped due to an unrecoverable failure
+    console.log("On error");
     console.log(error);
     // Delete the local and remote databases
-    db.destroy();
-    remoteDb.destroy();
+    return Promise.all([
+      db.destroy(),
+      remoteDb.destroy()
+    ]);
   });
+}).then(function() {
+  console.log("Local database deleted");
+  console.log("Remote database deleted");
 }).catch(function(error) {
   console.log(error);
 });

@@ -46,6 +46,35 @@ The `pouchdb` directory contains examples of using [PouchDB](http://pouchdb.com/
  * [Code Snippet](pouchdb/13-create-attachment.js)
  * [JSFiddle](https://jsfiddle.net/bradleyholt/n1s0d1yk/)
 
+## Related Boilerplates and Tools
+
+### Frontend Web Apps
+
+* [React Boilerplate with Service Workers](https://github.com/mbrio/react-boilerplate/tree/react-0.13-flummox-service>)
+
+### Backend Web Apps
+
+* [PouchDB npm Package](https://www.npmjs.com/package/pouchdb)
+* [PouchDB Server npm Package](https://www.npmjs.com/package/pouchdb-server)
+
+### Mobile Apps
+
+* [PouchDB for Ionic Framework](https://github.com/nolanlawson/pouchdb-ionic)
+* ["Hello world" Cordova app with PouchDB](https://github.com/nolanlawson/pouchdb-cordova-hello-world)
+* ["Hello world" Cordova app with PouchDB, using the SQLite Plugin](https://github.com/nolanlawson/pouchdb-cordova-hello-world-with-sqlite-plugin)
+* [Cloudant FoodTracker (uses Cloudant Sync for iOS)](https://github.com/ibm-cds-labs/cloudant-food-tracker)
+
+### Desktop Apps
+
+* [PouchDB for Electron (formerly Atom Shell)](https://github.com/nolanlawson/pouchdb-electron)
+* [PouchDB for Chrome packaged apps](https://github.com/nolanlawson/pouchdb-chrome-app)
+* ["Hello world" Chrome app with PouchDB](https://github.com/nolanlawson/pouchdb-chrome-app-hello-world)
+* [PouchDB for NW.js (aka Node-Webkit)](https://github.com/nolanlawson/pouchdb-nw)
+
+### Internet of Things (IoT) Apps
+
+* [Node-RED](http://nodered.org/)
+
 ## License
 
 Licensed under the [Apache License, Version 2.0](LICENSE.txt).
